@@ -33,9 +33,7 @@
     "eslint-loader": "^2.2.1",
     "string-replace-loader": "^2.2.0",
     "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6"
-  },
-  "dependencies": {
+    "webpack-cli": "^3.3.6",
     "@chinaso2018/lottie-mini": "^5.7.0"
   }
 }
