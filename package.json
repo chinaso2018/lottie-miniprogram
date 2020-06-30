@@ -1,7 +1,7 @@
 {
-  "name": "lottie-miniprogram",
+  "name": "@chinaso2018/lottie-miniprogram",
   "version": "1.0.7",
-  "description": "lottie for miniprogram",
+  "description": "lottie for miniprogram ",
   "main": "miniprogram_dist/index.js",
   "scripts": {
     "dev": "webpack --mode=development",
@@ -11,18 +11,18 @@
   "miniprogram": "miniprogram_dist",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wechat-miniprogram/lottie-miniprogram.git"
+    "url": "git+https://github.com/chinaso2018/lottie-miniprogram.git"
   },
   "keywords": [
     "lottie",
     "miniprogram"
   ],
-  "author": "wechat-miniprogram",
+  "author": "chinaso",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wechat-miniprogram/lottie-miniprogram/issues"
+    "url": "https://github.com/chinaso2018/lottie-miniprogram/issues"
   },
-  "homepage": "https://github.com/wechat-miniprogram/lottie-miniprogram#readme",
+  "homepage": "https://github.com/chinaso2018/lottie-miniprogram#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -33,7 +33,9 @@
     "eslint-loader": "^2.2.1",
     "string-replace-loader": "^2.2.0",
     "webpack": "^4.39.1",
-    "webpack-cli": "^3.3.6",
-    "lottie-web": "5.5.7"
+    "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {
+    "@chinaso2018/lottie-mini": "^5.7.0"
   }
 }

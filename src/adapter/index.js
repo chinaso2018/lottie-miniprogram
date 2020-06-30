@@ -1,3 +1,9 @@
+/*
+ * @Author: zhouyuying
+ * @Date:   2020-06-29 16:10:31
+ * @Last Modified by:   zhouyuying
+ * @Last Modified time: 2020-06-29 17:06:13
+ */
 import XHR from './XMLHttpRequest'
 
 function noop() {}
@@ -8,15 +14,17 @@ function createImg(canvas) {
     return {}
   }
   const img = canvas.createImage()
-  img.addEventListener = img.addEventListener || function (evtName, callback) {
-    if (evtName === 'load') {
-      img.onload = function () {
-        setTimeout(callback, 0)
+  img.addEventListener =
+    img.addEventListener ||
+    function (evtName, callback) {
+      if (evtName === 'load') {
+        img.onload = function () {
+          setTimeout(callback, 0)
+        }
+      } else if (evtName === 'error') {
+        img.onerror = callback
       }
-    } else if (evtName === 'error') {
-      img.onerror = callback
     }
-  }
   return img
 }
 
@@ -69,15 +77,15 @@ g.document = g.window.document = {
   createElement,
 }
 g.navigator = g.window.navigator = {
-  userAgent: ''
+  userAgent: '',
 }
 
 XMLHttpRequest = XHR
 
 export const setup = (canvas) => {
-  const {window, document} = g
-  window.requestAnimationFrame = canvas.requestAnimationFrame.bind(canvas)
-  window.cancelAnimationFrame = canvas.cancelAnimationFrame.bind(canvas)
+  const { window, document } = g
+  window.requestAnimationFrame = canvas.requestAnimationFrame
+  window.cancelAnimationFrame = canvas.cancelAnimationFrame
 
   document.createElement = createElement.bind(canvas)
 
@@ -90,4 +98,4 @@ export const setup = (canvas) => {
   wrapMethodFatory(ctx, 'fill', wrapFill)
 }
 
-export {g}
+export { g }
