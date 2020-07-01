@@ -2,7 +2,7 @@
  * @Author: zhouyuying
  * @Date:   2020-06-29 16:10:31
  * @Last Modified by:   zhouyuying
- * @Last Modified time: 2020-06-29 17:06:13
+ * @Last Modified time: 2020-07-01 15:22:32
  */
 import XHR from './XMLHttpRequest'
 
@@ -84,6 +84,7 @@ XMLHttpRequest = XHR
 
 export const setup = (canvas) => {
   const { window, document } = g
+
   window.requestAnimationFrame = canvas.requestAnimationFrame
   window.cancelAnimationFrame = canvas.cancelAnimationFrame
 

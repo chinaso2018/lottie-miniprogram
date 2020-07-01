@@ -2,7 +2,7 @@
  * @Author: zhouyuying
  * @Date:   2020-06-30 09:41:17
  * @Last Modified by:   zhouyuying
- * @Last Modified time: 2020-06-30 10:45:16
+ * @Last Modified time: 2020-06-30 16:28:09
  */
 const path = require('path')
 const webpack = require('webpack')
@@ -36,7 +36,7 @@ module.exports = {
             options: {
               multiple: [
                 {
-                  search: `'__LOTTIE_CANVAS__'`,
+                  search: `('__LOTTIE_CANVAS__')`,
                   replace: fs.readFileSync(
                     './node_modules/@chinaso2018/lottie-mini/build/player/lottie_canvas.js',
                     { encoding: 'utf8' }
