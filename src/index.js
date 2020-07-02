@@ -2,7 +2,7 @@
  * @Author: zhouyuying
  * @Date:   2020-06-30 16:26:20
  * @Last Modified by:   zhouyuying
- * @Last Modified time: 2020-06-30 16:27:56
+ * @Last Modified time: 2020-07-02 15:14:59
  */
 import { setup, g } from './adapter'
 const { window, document, navigator } = g
@@ -30,6 +30,6 @@ function loadAnimation(options) {
   return window.lottie.loadAnimation(options)
 }
 
-const { freeze, unfreeze, destroy } = window.lottie
+const { freeze, unfreeze, destroy, destroyAll } = window.lottie
 
-export { setup, loadAnimation, freeze, unfreeze, destroy }
+export { setup, loadAnimation, freeze, unfreeze, destroy, destroyAll }

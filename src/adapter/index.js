@@ -2,7 +2,7 @@
  * @Author: zhouyuying
  * @Date:   2020-06-29 16:10:31
  * @Last Modified by:   zhouyuying
- * @Last Modified time: 2020-07-01 15:22:32
+ * @Last Modified time: 2020-07-02 21:42:36
  */
 import XHR from './XMLHttpRequest'
 
@@ -69,6 +69,7 @@ function wrapMethodFatory(ctx, methodName, wrappedMethod) {
 const systemInfo = wx.getSystemInfoSync()
 const g = {}
 
+const isAndroid = systemInfo.platform == 'android' ? true : false
 g.window = {
   devicePixelRatio: systemInfo.pixelRatio,
 }
@@ -85,8 +86,13 @@ XMLHttpRequest = XHR
 export const setup = (canvas) => {
   const { window, document } = g
 
-  window.requestAnimationFrame = canvas.requestAnimationFrame
-  window.cancelAnimationFrame = canvas.cancelAnimationFrame
+  if (isAndroid) {
+    window.requestAnimationFrame = canvas.requestAnimationFrame.bind(canvas)
+    window.cancelAnimationFrame = canvas.cancelAnimationFrame.bind(canvas)
+  } else {
+    window.requestAnimationFrame = canvas.requestAnimationFrame
+    window.cancelAnimationFrame = canvas.cancelAnimationFrame
+  }
 
   document.createElement = createElement.bind(canvas)
 
